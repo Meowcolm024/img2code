@@ -21,6 +21,10 @@ Here is an example:
 python3 img2code.py "ruler.jpg" "ruler" "hs"
 ```
 
+## How it works
+
+Use `OpenCV` to read the image in `GRAYSCALE` mode. So we can create a list of characters corresponding to the gray scale. Then we just need to convert them to string.
+
 ## Example
 
 Here is an example (you may need a wide screen the view the full image in code).
@@ -34,86 +38,86 @@ Here is an example (you may need a wide screen the view the full image in code).
 <details>
 
 ```txt
-################################################################################
-################################################################################
-################################################################################
-#####################################    #######################################
-###################################  ###O ######################################
-################################## ###   O #####################################
-################################# ###   OO        ##############################
-###############################  ### OOO O OOOOOOO     #########################
-###########################    : ## ::::  ::::::::OOOOO   ######################
-#########################  OO:: ### ##############::::OOOO  ####################
-#######################  OO::## ##O              #####::##OO ###################
-#####################  OO::##   ## ##############   ####::##O  #################
-#################### ##::##  ## O# #     ###########  ####:##OO ################
-##################  ##:O#  #### OO  :: ::  ########### :###:###O ###############
-################# ##::O# #####   O :O O::     ######### :###::##O ##############
-################ ##:##: ##### :O O O OOO OO::: ######## O:###   OO #############
-############### O#:### #####  OOO O: :: O:OO:   ######## O:#:### OO ############
-############## O:#O:#O ####       O:    :::     ######## O:#:##:# O ############
-############## O O##O #### #   ###   OOO       # ######## O:#:##:# O ###########
-############# # # :  #### ### ####:######O ## #O ######## #:##:#:# O ###########
-############# # # O ##   ### #### #:###O#O ### O  ######## O:##:## O ###########
-############# #       O####O #O:# # ##:O##O ###    ####### #:O###O O ###########
-############# # ## ###  OOO #  O:   #: O##OO ###    ###### #O OOO OO ###########
-#############  ##  #####   ::###OO OOOO  ##O  O##    ##### ##     #O ###########
-#############  O#  ####   :   ############:: :  OO     ### ## ## O# ############
-############# O O : ###    ### ## ####O    :: :   OOO##  # ## ## #O ############
-############# OO    ## : # #  # # ###  ###O ::#O      ### ### # ## #############
-############## O:O# # :  # : O### O# ##  ## ::#:  O    ### # # ##O #############
-###########    O  #  O:  #  :#### O####O #:::#:#: OO    ## :  ##O ##############
-########## ###O # ## : ##O O   O# O## :##: O:#:#  :OO    # O###O ###############
-########## ##OOO# ## : : O O OO# OO##O    O:##:#   OOO # O ##O  ################
-########### #OO#O :## # #O :#### OO###OO OO:##:#   OO #   ##  ##################
-############  ##O O:# ##O: #### OO###### #O :#O::  : ##:##   ###################
-############## ::: :# OO:# ## ####### ###O O:#OO:O   #:#O   O ##################
-##############  :: #:# :## ## :#####: ### #O :OO:O  #:O  OO  O #################
-############# O  : #:## #O O## ::::: ###O #O :::OO #:O OOOOO ## ################
-############ OO  : #O## # O ### ::: ###O #OO :  O #:O O# OOOO #O ###############
-########### O#   : ##O#   O O###   ###O  # # O   #:O  : #   O ##  ##############
-########### ## O O ##O# :    ########O    O O O  #:O   ## OO   #O  #############
-########## O## O : ##O#  O    #####O    :::OO O #:O OO ######  ##  #############
-#########  ### O:  ##O#  O     ##O   :#: ::: O  #:O O ::###    ##   ############
-######### O##     O#O#O OO   #:    :OO:#  :: O #:O   :::   OO  ##O   ###########
-########  ###     ##O# OO   #:OO#: :O:#     #O #:O  ::    :OO  ##O  : ##########
-########  ####OO O#O#O #O    #:O: :#:#   O  # ##:O OO   O      ###    ##########
-#######   ###OOO ##OO ##     #:##:##:#O  OO # #::O :OO OOO#    ###   : #########
-#######   ###OO ##OO ##O  : O:##O####::O  O # #::O O:   OO### ####   : #########
-######    ##O  ###:O ##  :: :## ## ###O:  O # #::OO      O########   :: ########
-######        ###:O ##O ::: :# #### ##OO  O # #:O:O        O#######   : ########
-##### :      ###:O ##O  ::  ##########OO  O # #:O:OO        :O#####   :: #######
-##### :      ##:OO ##  :::  #### ######O #  # #:OO:#O       :::       :: #######
-#####       ###:O ##O :::   #### ######O O  ## #:#O:##      :::       ::: ######
-#### :      ##:OO ##  :::   O###O######O O   # ##O##:##      :::      ::: ######
-#### :     ###:O O## :::     #########:: O   O# ##:#O:##     :::::    :::: #####
-#### :   : ##:OO O## :O:     ########:##O O   O# ##::O:##    ::::::  ::::: #####
-### ::  :: ##:O O#O# OO:     ###O  O:#::  O  : O# ###:O:## : ::::::: ::::: #####
-### :: ::: ##:O O OOO O:     O  :####:#:  #  :: ##  ##:::#O :::::::::::::: #####
-### ::::: ##O:O O OOOO :      ::####::# O OO  : O#O# ###:## :::O::::::::::: ####
-## :::::: ##:OO OO    OO:  #####::::##  O OO  :: # O# O##:#O ::O::::::::::O ####
-## :::::: ##:O :  #   OO: ###:::####     OOO   : O O   O##O# ::OO:::::::::O ####
-## :::::: ##:O : ##   OOO ##:###O       OOOO   :  :   O ##O## :O OO::::::::O ###
-## :::::: O#:O : ###   #O ##O:O      # O#OO #    :OO OO O##O# :O  OO:::::::O ###
-## :::::: O#:O  ####    #O ##O:O O:O # ##OO ##    OOOOO  ##O#O : # OO::::::O ###
-## ::::::O O:OO #####   O   ##O:O :# # ### ####    OOO:  O#O#O  ### OO:::::O ###
-## O::::OO OO:O ######       OO:OO :O # #O #####     :  # ##OO ##### OOO:::O ###
-## O::::OO: O:O #######     #  O    # # ## #######      # ##OO ###### :OOO:O ###
-## OO::OO:  OO:O ######   #####      O # #O ########    # ##:O #######  :OOO ###
-### O#OOO ## O:O ################ :: # ##   ############# ##:O #########  :# ###
-### #OOO: ### O:O ############### ::  O ################# ##:O ###########  ####
-#### OO# #####  OO ###############    O ################# #O:O #################
-#### O: ########   ################ O O ################# O:O ##################
-#####  ############################# OOO ############### O:O ###################
-####################################   O ############### O  ####################
-#####################################    ###############  ######################
-#####################################  :  ######################################
-###################################### :: ######################################
-###################################### :: ######################################
-######################################   #######################################
-################################################################################
-################################################################################
-################################################################################
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  MMMO MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MMM   O MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MMM   OO        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  MMM OOO O OOOOOOO     MMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMM    : MM ::::  ::::::::OOOOO   MMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMM  OO:: MMM MMMMMMMMMMMMMM::::OOOO  MMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMM  OO::MM MMO              MMMMM::MMOO MMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMM  OO::MM   MM MMMMMMMMMMMMMM   MMMM::MMO  MMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMM MM::MM  MM OM M     MMMMMMMMMMM  MMMM:MMOO MMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMM  MM:OM  MMMM OO  :: ::  MMMMMMMMMMM :MMM:MMMO MMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMM MM::OM MMMMM   O :O O::     MMMMMMMMM :MMM::MMO MMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMM MM:MM: MMMMM :O O O OOO OO::: MMMMMMMM O:MMM   OO MMMMMMMMMMMMM
+MMMMMMMMMMMMMMM OM:MMM MMMMM  OOO O: :: O:OO:   MMMMMMMM O:M:MMM OO MMMMMMMMMMMM
+MMMMMMMMMMMMMM O:MO:MO MMMM       O:    :::     MMMMMMMM O:M:MM:M O MMMMMMMMMMMM
+MMMMMMMMMMMMMM O OMMO MMMM M   MMM   OOO       M MMMMMMMM O:M:MM:M O MMMMMMMMMMM
+MMMMMMMMMMMMM M M :  MMMM MMM MMMM:MMMMMMO MM MO MMMMMMMM M:MM:M:M O MMMMMMMMMMM
+MMMMMMMMMMMMM M M O MM   MMM MMMM M:MMMOMO MMM O  MMMMMMMM O:MM:MM O MMMMMMMMMMM
+MMMMMMMMMMMMM M       OMMMMO MO:M M MM:OMMO MMM    MMMMMMM M:OMMMO O MMMMMMMMMMM
+MMMMMMMMMMMMM M MM MMM  OOO M  O:   M: OMMOO MMM    MMMMMM MO OOO OO MMMMMMMMMMM
+MMMMMMMMMMMMM  MM  MMMMM   ::MMMOO OOOO  MMO  OMM    MMMMM MM     MO MMMMMMMMMMM
+MMMMMMMMMMMMM  OM  MMMM   :   MMMMMMMMMMMM:: :  OO     MMM MM MM OM MMMMMMMMMMMM
+MMMMMMMMMMMMM O O : MMM    MMM MM MMMMO    :: :   OOOMM  M MM MM MO MMMMMMMMMMMM
+MMMMMMMMMMMMM OO    MM : M M  M M MMM  MMMO ::MO      MMM MMM M MM MMMMMMMMMMMMM
+MMMMMMMMMMMMMM O:OM M :  M : OMMM OM MM  MM ::M:  O    MMM M M MMO MMMMMMMMMMMMM
+MMMMMMMMMMM    O  M  O:  M  :MMMM OMMMMO M:::M:M: OO    MM :  MMO MMMMMMMMMMMMMM
+MMMMMMMMMM MMMO M MM : MMO O   OM OMM :MM: O:M:M  :OO    M OMMMO MMMMMMMMMMMMMMM
+MMMMMMMMMM MMOOOM MM : : O O OOM OOMMO    O:MM:M   OOO M O MMO  MMMMMMMMMMMMMMMM
+MMMMMMMMMMM MOOMO :MM M MO :MMMM OOMMMOO OO:MM:M   OO M   MM  MMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMM  MMO O:M MMO: MMMM OOMMMMMM MO :MO::  : MM:MM   MMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMM ::: :M OO:M MM MMMMMMM MMMO O:MOO:O   M:MO   O MMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMM  :: M:M :MM MM :MMMMM: MMM MO :OO:O  M:O  OO  O MMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMM O  : M:MM MO OMM ::::: MMMO MO :::OO M:O OOOOO MM MMMMMMMMMMMMMMMM
+MMMMMMMMMMMM OO  : MOMM M O MMM ::: MMMO MOO :  O M:O OM OOOO MO MMMMMMMMMMMMMMM
+MMMMMMMMMMM OM   : MMOM   O OMMM   MMMO  M M O   M:O  : M   O MM  MMMMMMMMMMMMMM
+MMMMMMMMMMM MM O O MMOM :    MMMMMMMMO    O O O  M:O   MM OO   MO  MMMMMMMMMMMMM
+MMMMMMMMMM OMM O : MMOM  O    MMMMMO    :::OO O M:O OO MMMMMM  MM  MMMMMMMMMMMMM
+MMMMMMMMM  MMM O:  MMOM  O     MMO   :M: ::: O  M:O O ::MMM    MM   MMMMMMMMMMMM
+MMMMMMMMM OMM     OMOMO OO   M:    :OO:M  :: O M:O   :::   OO  MMO   MMMMMMMMMMM
+MMMMMMMM  MMM     MMOM OO   M:OOM: :O:M     MO M:O  ::    :OO  MMO  : MMMMMMMMMM
+MMMMMMMM  MMMMOO OMOMO MO    M:O: :M:M   O  M MM:O OO   O      MMM    MMMMMMMMMM
+MMMMMMM   MMMOOO MMOO MM     M:MM:MM:MO  OO M M::O :OO OOOM    MMM   : MMMMMMMMM
+MMMMMMM   MMMOO MMOO MMO  : O:MMOMMMM::O  O M M::O O:   OOMMM MMMM   : MMMMMMMMM
+MMMMMM    MMO  MMM:O MM  :: :MM MM MMMO:  O M M::OO      OMMMMMMMM   :: MMMMMMMM
+MMMMMM        MMM:O MMO ::: :M MMMM MMOO  O M M:O:O        OMMMMMMM   : MMMMMMMM
+MMMMM :      MMM:O MMO  ::  MMMMMMMMMMOO  O M M:O:OO        :OMMMMM   :: MMMMMMM
+MMMMM :      MM:OO MM  :::  MMMM MMMMMMO M  M M:OO:MO       :::       :: MMMMMMM
+MMMMM       MMM:O MMO :::   MMMM MMMMMMO O  MM M:MO:MM      :::       ::: MMMMMM
+MMMM :      MM:OO MM  :::   OMMMOMMMMMMO O   M MMOMM:MM      :::      ::: MMMMMM
+MMMM :     MMM:O OMM :::     MMMMMMMMM:: O   OM MM:MO:MM     :::::    :::: MMMMM
+MMMM :   : MM:OO OMM :O:     MMMMMMMM:MMO O   OM MM::O:MM    ::::::  ::::: MMMMM
+MMM ::  :: MM:O OMOM OO:     MMMO  O:M::  O  : OM MMM:O:MM : ::::::: ::::: MMMMM
+MMM :: ::: MM:O O OOO O:     O  :MMMM:M:  M  :: MM  MM:::MO :::::::::::::: MMMMM
+MMM ::::: MMO:O O OOOO :      ::MMMM::M O OO  : OMOM MMM:MM :::O::::::::::: MMMM
+MM :::::: MM:OO OO    OO:  MMMMM::::MM  O OO  :: M OM OMM:MO ::O::::::::::O MMMM
+MM :::::: MM:O :  M   OO: MMM:::MMMM     OOO   : O O   OMMOM ::OO:::::::::O MMMM
+MM :::::: MM:O : MM   OOO MM:MMMO       OOOO   :  :   O MMOMM :O OO::::::::O MMM
+MM :::::: OM:O : MMM   MO MMO:O      M OMOO M    :OO OO OMMOM :O  OO:::::::O MMM
+MM :::::: OM:O  MMMM    MO MMO:O O:O M MMOO MM    OOOOO  MMOMO : M OO::::::O MMM
+MM ::::::O O:OO MMMMM   O   MMO:O :M M MMM MMMM    OOO:  OMOMO  MMM OO:::::O MMM
+MM O::::OO OO:O MMMMMM       OO:OO :O M MO MMMMM     :  M MMOO MMMMM OOO:::O MMM
+MM O::::OO: O:O MMMMMMM     M  O    M M MM MMMMMMM      M MMOO MMMMMM :OOO:O MMM
+MM OO::OO:  OO:O MMMMMM   MMMMM      O M MO MMMMMMMM    M MM:O MMMMMMM  :OOO MMM
+MMM OMOOO MM O:O MMMMMMMMMMMMMMMM :: M MM   MMMMMMMMMMMMM MM:O MMMMMMMMM  :M MMM
+MMM MOOO: MMM O:O MMMMMMMMMMMMMMM ::  O MMMMMMMMMMMMMMMMM MM:O MMMMMMMMMMM  MMMM
+MMMM OOM MMMMM  OO MMMMMMMMMMMMMMM    O MMMMMMMMMMMMMMMMM MO:O MMMMMMMMMMMMMMMMM
+MMMM O: MMMMMMMM   MMMMMMMMMMMMMMMM O O MMMMMMMMMMMMMMMMM O:O MMMMMMMMMMMMMMMMMM
+MMMMM  MMMMMMMMMMMMMMMMMMMMMMMMMMMMM OOO MMMMMMMMMMMMMMM O:O MMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   O MMMMMMMMMMMMMMM O  MMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    MMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM  :  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM :: MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM :: MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 ```
 
 </details>

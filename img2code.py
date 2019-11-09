@@ -24,7 +24,7 @@ def saveCode(img: str, ext: str = "txt", name: str = "output"):
     file = open((name+"."+ext), "w+")
     if ext == "py":
         out = "\"\"\"\n" + img + "\n\"\"\"\n"
-    elif ext in ["c", "cpp", "cs", "js", "java"]:
+    elif ext in ["c", "cpp", "cs", "js", "ts", "java", "swift"]:
         out = "/*\n" + img + "\n*/\n"
     elif ext == "hs":
         out = "{-\n" + img + "\n-}\n"
@@ -36,7 +36,7 @@ def saveCode(img: str, ext: str = "txt", name: str = "output"):
 if __name__ == "__main__":
     a = sys.argv
     if len(a) < 2:
-        raise "Expected at least 1 args"
+        raise "Expect at least 1 argument."
     elif len(a) == 2:
         saveCode(imgToCode(a[1]))
     elif len(a) == 3:
