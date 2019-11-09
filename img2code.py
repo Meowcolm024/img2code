@@ -15,9 +15,9 @@ def convert(pix):
 
 def imgToCode(img: str) -> str:
     img = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
-    y = "\n".join(
+    out = "\n".join(
         list(map(lambda x: ''.join(x), map(lambda xs: map(convert, xs), img))))
-    return y
+    return out
 
 
 def saveCode(img: str, ext: str = "txt", name: str = "output"):
@@ -34,12 +34,12 @@ def saveCode(img: str, ext: str = "txt", name: str = "output"):
 
 
 if __name__ == "__main__":
-    a = sys.argv
-    if len(a) < 2:
-        raise "Expect at least 1 argument."
-    elif len(a) == 2:
-        saveCode(imgToCode(a[1]))
-    elif len(a) == 3:
-        saveCode(imgToCode(a[1]), "txt", a[2])
+    args = sys.argv
+    if len(args) < 2:
+        raise Exception("Expect at least 1 argument.")
+    elif len(args) == 2:
+        saveCode(imgToCode(args[1]))
+    elif len(args) == 3:
+        saveCode(imgToCode(args[1]), "txt", args[2])
     else:
-        saveCode(imgToCode(a[1]), a[3], a[2])
+        saveCode(imgToCode(args[1]), args[3], args[2])
