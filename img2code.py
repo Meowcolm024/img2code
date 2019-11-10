@@ -1,16 +1,11 @@
 import cv2
 import sys
+import math
 
 
-def convert(pix):
-    if 0 <= pix < 63:
-        return ' '
-    elif 64 <= pix < 127:
-        return ':'
-    elif 128 <= pix < 191:
-        return 'O'
-    else:
-        return 'M'
+def convert(scale):
+    pixels = [' ', ':', 'O', 'M']
+    return pixels[math.floor(scale/64)]
 
 
 def imgToCode(img: str) -> str:
