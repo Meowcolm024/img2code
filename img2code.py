@@ -3,15 +3,15 @@ import sys
 import math
 
 
-def convert(scale):
+def convert(scale: int) -> str:
     pixels = [' ', ':', 'O', 'M']
-    return pixels[math.floor(scale/64)]
+    return pixels[math.floor(scale * len(pixels) / 256)]
 
 
 def imgToCode(img: str) -> str:
     img = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
     out = "\n".join(
-        list(map(lambda x: ''.join(x), map(lambda xs: map(convert, xs), img))))
+        map(lambda x: ''.join(x), map(lambda xs: map(convert, xs), img)))
     return out
 
 
